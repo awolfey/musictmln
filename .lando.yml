@@ -1,0 +1,50 @@
+name: musictmln
+recipe: pantheon
+
+proxy:
+  pma:
+    - pma.musictmln.lndo.site
+config:
+  framework: drupal8
+  site: musictmln
+  id: 38707965-def5-49cd-9b8d-353acd2d6925
+  webroot: web
+  drush: global:8.1.16
+
+compose:
+  - docker-compose.yml
+
+events:
+  post-start:
+  post-pull:
+  post-db-import:
+
+services:
+  appserver:
+    xdebug: true
+    overrides:
+      services:
+        environment:
+          BEHAT_PARAMS: >-
+            {"extensions" : {"Behat\\MinkExtension" : {"base_url" :
+            "http://nginx/", "files_path" : "/app/testing/features/fixtures/"}, "Drupal\\DrupalExtension" : {"drush" :   {
+            "root":  "/app/web" }}}}
+          CI_ENV: ci-${CIRCLE_BUILD_NUM}
+          PANTHEON_SITE: ${TERMINUS_SITE}
+          CIRCLE_BRANCH: ${CIRCLE_BRANCH}
+          CIRCLE_USERNAME: ${CIRCLE_USERNAME}
+          GIT_EMAIL: ${GIT_EMAIL}
+
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
+tooling:
+  behat:
+    service: appserver
+    cmd: "/app/vendor/bin/behat --config=/app/tests/behat.yml"
+
+# Set $DRUSH_ROOT in the .env file if needed.
+  drush:
+    service: appserver
+    cmd: /usr/local/bin/drush --root=/app/web
