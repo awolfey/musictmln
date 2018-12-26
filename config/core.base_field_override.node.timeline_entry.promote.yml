@@ -1,0 +1,22 @@
+uuid: 962c0800-1256-4c9a-b243-815432fb9bab
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.timeline_entry
+id: node.timeline_entry.promote
+field_name: promote
+entity_type: node
+bundle: timeline_entry
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

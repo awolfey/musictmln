@@ -1,0 +1,22 @@
+uuid: 688aeb9a-e274-4718-a86d-4ab8f245c544
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.timeline_entry
+  module:
+    - text
+id: node.timeline_entry.body
+field_name: body
+entity_type: node
+bundle: timeline_entry
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

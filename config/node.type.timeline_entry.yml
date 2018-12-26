@@ -1,0 +1,17 @@
+uuid: 06d304a8-ad7d-4b09-a8a0-aece86be620c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Timeline entry'
+type: timeline_entry
+description: 'A single item on the timeline'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

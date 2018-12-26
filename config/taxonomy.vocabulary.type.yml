@@ -1,0 +1,9 @@
+uuid: 14334fbc-5650-457c-93fc-0c9cbcb7be1d
+langcode: en
+status: true
+dependencies: {  }
+name: Type
+vid: type
+description: 'Type of collection of dates: Composers, Eras, Instruments, etc'
+hierarchy: 0
+weight: 0

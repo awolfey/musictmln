@@ -44,7 +44,6 @@ tooling:
     service: appserver
     cmd: "/app/vendor/bin/behat --config=/app/tests/behat.yml"
 
-# Set $DRUSH_ROOT in the .env file if needed.
   drush:
     service: appserver
     cmd: /usr/local/bin/drush --root=/app/web

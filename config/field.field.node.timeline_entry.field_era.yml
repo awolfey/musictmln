@@ -1,0 +1,21 @@
+uuid: d250f3c9-4f95-41c7-8c2c-1db4d982ccf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_era
+    - node.type.timeline_entry
+  module:
+    - options
+id: node.timeline_entry.field_era
+field_name: field_era
+entity_type: node
+bundle: timeline_entry
+label: Era
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
